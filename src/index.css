@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
-@import '../portfolio-standalone/node_modules/tailwindcss/dist/lib.d.mts';
-@import '../portfolio-standalone/node_modules/tw-animate-css/dist/tw-animate.css';
+@import "tailwindcss";
+@import '../node_modules/tw-animate-css/dist/tw-animate.css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
