@@ -11,6 +11,37 @@
      values are simply ignored and the site's own theme is used.
      ============================================================ */
   :root {
+    /* Light mode palette */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-border: 214 32% 91%;
+
+    --primary: 217 91% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 142 71% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+
+    --code-number: 38 92% 45%;
+
+    --app-font-mono: 'Fira Code', Consolas, Menlo, monospace;
+  }
+
+  .dark {
     --background: 223 47% 8%;
     --foreground: 210 40% 98%;
 
@@ -35,8 +66,6 @@
 
     --border: 215 28% 17%;
 
-    /* not part of the design system — just a warm tone for numeric
-       literals so they read distinctly from keywords/types */
     --code-number: 38 92% 65%;
 
     --app-font-mono: 'Fira Code', Consolas, Menlo, monospace;
@@ -392,6 +421,17 @@
 
   tick();
 })();
+
+// Listen for theme changes from parent page
+window.addEventListener('message', function(event) {
+  if (event.data && event.data.type === 'theme-change') {
+    if (event.data.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+});
 </script>
 
 </body>

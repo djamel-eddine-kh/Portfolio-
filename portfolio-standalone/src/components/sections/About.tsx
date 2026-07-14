@@ -1,9 +1,20 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTheme } from '../ThemeProvider';
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { theme } = useTheme();
+
+  const handleIframeLoad = (e: React.SyntheticEvent<HTMLIFrameElement>) => {
+    const iframe = e.currentTarget;
+    try {
+      iframe.contentWindow?.postMessage({ type: 'theme-change', theme }, '*');
+    } catch {
+      // Cross-origin iframe, skip silently
+    }
+  };
 
   return (
     <section id="about" className="py-24 w-full max-w-7xl mx-auto" ref={ref}>
@@ -41,6 +52,7 @@ export default function About() {
                   title="Software engineer illustration"
                   scrolling="no"
                   className="w-full h-full border-0 bg-transparent"
+                  onLoad={handleIframeLoad}
                 />
               </div>
             </div>

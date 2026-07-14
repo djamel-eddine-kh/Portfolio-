@@ -51,7 +51,7 @@ export default function Skills() {
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2 font-normal">05.</span>
-            Technical Arsenal
+            Technical Skills
           </h2>
           <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
