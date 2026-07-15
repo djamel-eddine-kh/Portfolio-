@@ -13,7 +13,7 @@ export default function Contact() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-primary font-mono mb-4">08. What's Next?</p>
+        <p className="text-primary font-mono mb-4">What's Next?</p>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Let's build something together.</h2>
         
         <p className="text-muted-foreground text-lg mb-12">

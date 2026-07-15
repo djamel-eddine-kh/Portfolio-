@@ -5,17 +5,17 @@ import { GraduationCap } from 'lucide-react';
 const EDUCATION = [
   {
     degree: "PhD Candidate — Artificial Intelligence",
-    school: "University of M'Hamed Bougara",
+    school: "University of M'Hamed Bougara Boumerdes",
     period: "2025 – Present"
   },
   {
     degree: "Master's — Information Technology",
-    school: "University", // Add university if known
+    school: "", // Add university if known
     period: "2022 – 2024"
   },
   {
     degree: "Bachelor — Computer Systems",
-    school: "University", // Add university if known
+    school: "", // Add university if known
     period: "2019 – 2022"
   }
 ];
@@ -33,7 +33,6 @@ export default function Education() {
       >
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
-            <span className="text-primary font-mono text-xl md:text-2xl mr-2 font-normal">06.</span>
             Education
           </h2>
           <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
