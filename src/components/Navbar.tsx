@@ -187,7 +187,6 @@ export default function Navbar() {
             >
               <div className="flex flex-col gap-8 mt-12">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono text-xs text-muted-foreground">// Navigation</span>
                   <motion.button
                     onClick={toggleMobileMenu}
                     aria-label="Close menu"
