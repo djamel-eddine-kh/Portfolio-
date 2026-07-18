@@ -3,21 +3,19 @@
 import { useState, useEffect } from "react";
 
 const CODE_LINES = [
-  "$ git status",
+  "   $ git status",
   "",
-  "On branch main",
+  "   On branch main",
   "",
-  "Changes to be committed:",
+  "   Changes to be committed:",
+  "     ✓ Spring AI integration",
+  "     ✓ Caching optimization",
+  "     ✓ SQL query improvements",
+  "     ✓ Auth refactoring",
   "",
-  "  ✓ Add Spring AI integration",
-  "  ✓ Improve caching layer",
-  "  ✓ Optimize SQL queries",
-  "  ✓ Fix authentication flow",
+  '   $ git commit -m "Implement semantic search"',
   "",
-  '$ git commit -m "Ship something awesome"',
-  "",
-  "[main a1b2c3d] Ship something awesome",
-  " 4 files changed, 127 insertions(+)",
+  "   [main 4f2c8a1] Success",
 ];
 
 function CodeDisplay() {
