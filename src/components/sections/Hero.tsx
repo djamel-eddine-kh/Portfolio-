@@ -1,44 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SUBTITLES = [
   "Scalable Backend Systems",
-  "AI Solutions",
+  "AI Solutions", 
   "Mobile Applications"
 ];
 
 export default function Hero() {
   const [subtitleIndex, setSubtitleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentWord = SUBTITLES[subtitleIndex];
-    let typingSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && displayText === currentWord) {
-      typingSpeed = 2000;
-      setTimeout(() => setIsDeleting(true), typingSpeed);
-      return;
-    }
-
-    if (isDeleting && displayText === '') {
-      setIsDeleting(false);
+    const timer = setInterval(() => {
       setSubtitleIndex((prev) => (prev + 1) % SUBTITLES.length);
-      return;
-    }
+    }, 3500);
 
-    const timer = setTimeout(() => {
-      setDisplayText(currentWord.substring(0, displayText.length + (isDeleting ? -1 : 1)));
-    }, typingSpeed);
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, subtitleIndex]);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-center items-start max-w-5xl mx-auto pt-20" id="hero">
-      {/* Background Dots */}
-      <div className="absolute inset-0 -z-10 dot-pattern opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
+      {/* Background Dots - reduced opacity */}
+      <div className="absolute inset-0 -z-10 dot-pattern opacity-15 [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" aria-hidden="true" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +36,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-4 max-w-3xl">
           Djamel Eddine Khelifaoui.
         </h1>
       </motion.div>
@@ -63,8 +46,20 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-muted-foreground mb-6 h-[2em]">
-          I build <span className="text-accent">{displayText}</span><span className="animate-pulse text-accent">|</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-muted-foreground mb-6 h-[1.5em]">
+          I build{" "}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={subtitleIndex}
+              className="text-accent font-semibold"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              {SUBTITLES[subtitleIndex]}
+            </motion.span>
+          </AnimatePresence>
         </h2>
       </motion.div>
 
@@ -87,16 +82,18 @@ export default function Hero() {
         className="flex flex-wrap gap-4"
       >
         <a 
+          href="#projects" 
+          className="px-8 py-4 bg-primary text-primary-foreground font-mono rounded-md hover:bg-primary/90 transition-colors"
+        >
+          View Projects
+        </a>
+        <a 
           href="https://cvdesignr.com/p/688b37ce46bc7" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-4 bg-transparent border border-primary text-primary font-mono rounded-md hover:bg-primary/10 transition-colors"
         >
           Download Resume
-        </a>
-        <a 
-          href="#projects" 
-          className="px-8 py-4 bg-secondary text-secondary-foreground font-mono rounded-md hover:bg-secondary/80 transition-colors"
-        >
-          View Projects
         </a>
       </motion.div>
     </section>

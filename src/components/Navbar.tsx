@@ -100,7 +100,7 @@ export default function Navbar() {
         </motion.a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map((link, i) => (
             <motion.a
               key={link.name}
@@ -110,6 +110,7 @@ export default function Navbar() {
               transition={{ delay: 0.05 * i }}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.97 }}
+              aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
               className={`group relative pb-1 text-sm font-mono transition-colors hover:text-primary ${
                 activeSection === link.href.substring(1)
                   ? 'text-primary'
@@ -120,8 +121,9 @@ export default function Navbar() {
                 className="text-primary mr-2 opacity-80 inline-flex align-middle"
                 whileHover={{ rotate: -8, scale: 1.08 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 16 }}
+                aria-hidden="true"
               >
-                <link.icon size={14} strokeWidth={2} aria-hidden="true" />
+                <link.icon size={14} strokeWidth={2} />
               </motion.span>
               {link.name}
               <motion.span
@@ -133,11 +135,14 @@ export default function Navbar() {
                 }
                 whileHover={{ width: '100%', opacity: 0.9 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
+                aria-hidden="true"
               />
             </motion.a>
           ))}
           <motion.a
             href="https://cvdesignr.com/p/688b37ce46bc7"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.05 * NAV_LINKS.length }}

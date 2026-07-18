@@ -21,8 +21,11 @@ const queryClient = new QueryClient();
 function Portfolio() {
   return (
     <div className="min-h-screen w-full bg-background selection:bg-primary/30 selection:text-primary-foreground">
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main className="flex flex-col items-center w-full px-6 md:px-12 lg:px-24">
+      <main id="main" className="flex flex-col items-center w-full px-6 md:px-12 lg:px-24">
         <Hero />
         <About />
         <Experience />
