@@ -3,18 +3,21 @@
 import { useState, useEffect } from "react";
 
 const CODE_LINES = [
-  " /**",
-  "  * Checks if a string is a palindrome.",
-  "  */",
-  " public static boolean isPalindrome(String s) {",
-  "     int left = 0, right = s.length() - 1;",
-  "     while (left < right) {",
-  "         if (s.charAt(left++) != s.charAt(right--)) {",
-  "             return false;",
-  "         }",
-  "     }",
-  "     return true;",
-  " }"
+  "$ git status",
+  "",
+  "On branch main",
+  "",
+  "Changes to be committed:",
+  "",
+  "  ✓ Add Spring AI integration",
+  "  ✓ Improve caching layer",
+  "  ✓ Optimize SQL queries",
+  "  ✓ Fix authentication flow",
+  "",
+  '$ git commit -m "Ship something awesome"',
+  "",
+  "[main a1b2c3d] Ship something awesome",
+  " 4 files changed, 127 insertions(+)",
 ];
 
 function CodeDisplay() {
