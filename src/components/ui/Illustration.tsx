@@ -3,18 +3,18 @@
 import { useState, useEffect } from "react";
 
 const CODE_LINES = [
-  "/**",
-  " * Checks if a string is a palindrome.",
-  " */",
-  "public static boolean isPalindrome(String s) {",
-  "    int left = 0, right = s.length() - 1;",
-  "    while (left < right) {",
-  "        if (s.charAt(left++) != s.charAt(right--)) {",
-  "            return false;",
-  "        }",
-  "    }",
-  "    return true;",
-  "}"
+  " /**",
+  "  * Checks if a string is a palindrome.",
+  "  */",
+  " public static boolean isPalindrome(String s) {",
+  "     int left = 0, right = s.length() - 1;",
+  "     while (left < right) {",
+  "         if (s.charAt(left++) != s.charAt(right--)) {",
+  "             return false;",
+  "         }",
+  "     }",
+  "     return true;",
+  " }"
 ];
 
 function CodeDisplay() {

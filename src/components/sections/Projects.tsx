@@ -73,9 +73,9 @@ const PROJECTS: Project[] = [
     title: "Miyahi Mob",
     type: "Enterprise Mobile Platform",
     description: "Redesign of an enterprise mobile platform, improving performance, fixing bugs, and providing robust backend APIs.",
-    tech: ["Spring Boot", "Angular"],
+    tech: ["Spring Boot", "Kotlin"],
     githubUrl: "https://github.com/djamel-eddine-kh/miyahi-mob",
-    status: "internal",
+    status: "production",
   },
   {
     title: "National SMS Platform",
@@ -108,7 +108,7 @@ const PROJECTS: Project[] = [
     description: "Enterprise resource planning system customized for flight school operations and scheduling.",
     tech: ["Python", "Django", "Bootstrap"],
     githubUrl: "https://github.com/djamel-eddine-kh/flight-school-erp",
-    status: "opensource",
+    status: "internal",
   }
 ];
 
