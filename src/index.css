@@ -191,6 +191,28 @@
   }
 }
 
+/* Smooth theme transitions for all themed elements */
+[class*="bg-background"],
+[class*="bg-card"],
+[class*="bg-secondary"],
+[class*="bg-muted"],
+[class*="bg-primary"],
+[class*="bg-accent"],
+[class*="bg-popover"],
+[class*="bg-sidebar"],
+[class*="text-foreground"],
+[class*="text-muted-foreground"],
+[class*="text-card-foreground"],
+[class*="text-primary"],
+[class*="text-accent"],
+[class*="text-secondary"],
+[class*="border-border"],
+[class*="border-card-border"],
+[class*="border-primary"],
+[class*="border-secondary"] {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
