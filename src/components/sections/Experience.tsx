@@ -9,7 +9,6 @@ import {
 import ExperienceCard from "./ExperienceCard";
 import { experiences } from "./experienceData";
 import {
-  containerVariants,
   headerVariants,
 } from "./animations";
 import TimelineItem from "@/components/sections/TimelineItem.tsx";
@@ -137,12 +136,7 @@ export default function Experience() {
 
             </div>
 
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                className="space-y-16"
-            >
+            <div className="space-y-16">
               {experiences.map((experience, index) => {
 
                 const left = index % 2 === 0;
@@ -158,7 +152,7 @@ export default function Experience() {
                 );
 
               })}
-            </motion.div>
+            </div>
 
           </div>
 

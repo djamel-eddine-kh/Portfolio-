@@ -34,8 +34,6 @@ export default function ExperienceCard({
 
             bg-card/90
 
-      backdrop-blur-xl
-
             text-card-foreground
 
         w-full

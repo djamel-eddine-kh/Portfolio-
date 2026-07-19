@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "./types";
 import {
-    activeNode,
+    activeNode, smooth,
     inactiveNode,
     nodeTransition,
 } from "./animations";
@@ -26,8 +26,12 @@ export default function TimelineItem({
     });
 
     return (
-        <div
+        <motion.div
             ref={ref}
+            initial={{ opacity: 0, y: 35, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={smooth}
             className="
       relative
 
@@ -215,6 +219,6 @@ export default function TimelineItem({
 
                 <ExperienceCard experience={experience} />
             </div>
-        </div>
+        </motion.div>
     );
 }
