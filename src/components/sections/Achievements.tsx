@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import { Award } from 'lucide-react';
 
 const ACHIEVEMENTS = [
-  "NVIDIA Fundamentals of Deep Learning",
-  "Hackathon Judge",
-  "Android Bootcamp Instructor",
-  "JunctionX Participant"
+  { label: "NVIDIA Fundamentals of Deep Learning" },
+  { label: "Hackathon Judge" },
+  { label: "Android Bootcamp Instructor", url: "https://drive.google.com/drive/folders/1Ayl7jqfVDoSWcg--35OgTOnBRhkuaILF" },
+  { label: "JunctionX Participant" }
 ];
 
 export default function Achievements() {
@@ -47,15 +47,26 @@ export default function Achievements() {
           animate={isInView ? "show" : "hidden"}
         >
           {ACHIEVEMENTS.map((achievement, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               variants={item}
               className="flex items-center gap-4 p-4 rounded-lg bg-card border border-card-border hover:border-accent/50 transition-colors group"
             >
               <div className="text-accent group-hover:scale-110 transition-transform">
                 <Award className="w-6 h-6 stroke-1" />
               </div>
-              <span className="font-medium text-foreground">{achievement}</span>
+              {achievement.url ? (
+                <a
+                  href={achievement.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-foreground hover:text-accent transition-colors"
+                >
+                  {achievement.label}
+                </a>
+              ) : (
+                <span className="font-medium text-foreground">{achievement.label}</span>
+              )}
             </motion.div>
           ))}
         </motion.div>
