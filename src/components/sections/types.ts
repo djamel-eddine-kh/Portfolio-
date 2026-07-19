@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import type { FC } from "react";
 
 export interface Experience {
     id: number;
@@ -11,5 +11,5 @@ export interface Experience {
     points: string[];
     skills: string[];
 
-    icon: LucideIcon;
+    icon: FC<{ size?: number; className?: string }>;
 }

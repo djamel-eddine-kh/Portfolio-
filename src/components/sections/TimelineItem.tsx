@@ -28,8 +28,8 @@ export default function TimelineItem({
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 35, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, x: left ? -30 : 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={smooth}
             className="
@@ -182,16 +182,16 @@ export default function TimelineItem({
 
             {/* MOBILE */}
 
-                        <div className="lg:hidden relative pl-8 pr-1">
+                        <div className="lg:hidden relative pl-10 pr-0">
                 <div
                     className="
           absolute
 
-                    left-0
-                    top-7
+                    left-3.5
+                    top-6
 
-          h-6
-          w-6
+                    h-5
+                    w-5
 
           rounded-full
 
@@ -208,12 +208,12 @@ export default function TimelineItem({
                 >
                     <motion.div
                         animate={{
-                            scale: active ? 1.2 : 1,
+                                scale: active ? 1.15 : 1,
                             backgroundColor: active
                                 ? "hsl(var(--primary))"
                                 : "hsl(var(--muted-foreground))",
                         }}
-                        className="h-3 w-3 rounded-full"
+                            className="h-2.5 w-2.5 rounded-full"
                     />
                 </div>
 

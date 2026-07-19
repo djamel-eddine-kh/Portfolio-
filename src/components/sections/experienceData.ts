@@ -1,9 +1,9 @@
 import {
-    Building2,
-    Droplets,
-    Smartphone,
-    Code2,
-} from "lucide-react";
+    OilFlame,
+    WaterDrop,
+    PlayArrow,
+    Briefcase,
+} from "./CompanyIcons";
 
 import { Experience } from "./types";
 
@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
 
         current: true,
 
-        icon: Building2,
+        icon: OilFlame,
 
         points: [
             "Architected and developed an enterprise telecom asset management platform.",
@@ -51,7 +51,7 @@ export const experiences: Experience[] = [
 
         duration: "7 Months",
 
-        icon: Droplets,
+        icon: WaterDrop,
 
         points: [
             "Redesigned the Miyahi Mob mobile application with a modern user experience.",
@@ -81,7 +81,7 @@ export const experiences: Experience[] = [
 
         duration: "8 Months",
 
-        icon: Smartphone,
+        icon: PlayArrow,
 
         points: [
             "Developed backend services following a Microservices architecture.",
@@ -111,7 +111,7 @@ export const experiences: Experience[] = [
 
         duration: "~1 Year",
 
-        icon: Code2,
+        icon: Briefcase,
 
         points: [
             "Built a delivery application from concept to deployment.",

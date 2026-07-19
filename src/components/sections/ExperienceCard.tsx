@@ -3,7 +3,6 @@ import { Calendar, CheckCircle2 } from "lucide-react";
 
 import { Experience } from "./types";
 import {
-    badgeHover,
     cardHover,
     cardVariants,
     iconHover,
@@ -81,11 +80,11 @@ export default function ExperienceCard({
       "
             />
 
-            <div className="relative px-5 py-5 sm:px-7 sm:py-6">
+            <div className="relative px-4 py-4 sm:px-6 sm:py-5">
 
                 {/* HEADER */}
 
-                <div className="flex flex-wrap items-start justify-between gap-4 sm:gap-5">
+                <div className="flex flex-wrap items-start justify-between gap-3 sm:gap-4">
 
                     <div className="flex gap-4">
 
@@ -93,10 +92,10 @@ export default function ExperienceCard({
                             whileHover={iconHover}
                             className="
               flex
-              h-12
-              w-12
-              sm:h-14
-              sm:w-14
+              h-11
+              w-11
+              sm:h-12
+              sm:w-12
               shrink-0
               items-center
               justify-center
@@ -116,11 +115,11 @@ export default function ExperienceCard({
 
                         <div>
 
-                            <h3 className="text-lg font-bold text-foreground sm:text-xl">
+                            <h3 className="text-lg font-bold text-foreground sm:text-[1.05rem]">
                                 {experience.company}
                             </h3>
 
-                            <p className="mt-1 text-sm text-primary sm:text-base">
+                            <p className="mt-0.5 text-sm text-primary">
                                 {experience.role}
                             </p>
 
@@ -144,8 +143,8 @@ export default function ExperienceCard({
 
                 bg-emerald-500/10
 
-                px-3
-                py-1.5
+                px-2.5
+                py-1
 
                 text-xs
                 font-medium
@@ -164,7 +163,7 @@ export default function ExperienceCard({
                             </div>
                         )}
 
-                        <div className="mt-2 flex items-center justify-end gap-2 text-xs text-muted-foreground sm:mt-3 sm:text-sm">
+                        <div className="mt-1.5 flex items-center justify-end gap-2 text-[11px] text-muted-foreground sm:mt-2 sm:text-sm">
 
                             <Calendar size={15} />
 
@@ -178,11 +177,11 @@ export default function ExperienceCard({
 
                 {/* Divider */}
 
-                <div className="my-4 h-px bg-border sm:my-5" />
+                <div className="my-3 h-px bg-border sm:my-4" />
 
                 {/* ACHIEVEMENTS */}
 
-                <div className="space-y-2.5 sm:space-y-3">
+                <div className="space-y-2 sm:space-y-2.5">
 
                     {experience.points.map((point) => (
 
@@ -192,7 +191,7 @@ export default function ExperienceCard({
                         >
 
                             <CheckCircle2
-                                size={17}
+                                size={16}
                                 className="
                 mt-0.5
 
@@ -202,7 +201,7 @@ export default function ExperienceCard({
                 "
                             />
 
-                            <p className="leading-6 text-sm text-muted-foreground sm:text-base sm:leading-7">
+                            <p className="text-sm leading-5 text-muted-foreground sm:leading-6">
 
                                 {point}
 
@@ -211,62 +210,6 @@ export default function ExperienceCard({
                         </div>
 
                     ))}
-
-                </div>
-
-                {/* Technologies */}
-
-                <div className="mt-6 sm:mt-8">
-
-                    <div
-                        className="
-            mb-3
-
-            text-xs
-
-            uppercase
-
-            tracking-[0.25em]
-
-                        text-muted-foreground
-          "
-                    >
-                        Technologies
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
-
-                        {experience.skills.map((skill) => (
-
-                            <motion.div
-                                key={skill}
-                                whileHover={badgeHover}
-                                className="
-                rounded-full
-
-                border
-                border-primary/15
-
-                bg-primary/5
-
-                px-2.5
-                py-1
-
-                sm:px-3
-                sm:py-1.5
-
-                text-xs
-                font-medium
-
-                text-primary
-                "
-                            >
-                                {skill}
-                            </motion.div>
-
-                        ))}
-
-                    </div>
 
                 </div>
 
