@@ -71,9 +71,6 @@ export default function Experience() {
           >
             <div className="flex items-center gap-5">
 
-            <span className="font-mono text-xs tracking-[0.3em] text-primary">
-              02.
-            </span>
 
               <h2 className="text-5xl font-extrabold text-foreground">
                 Career{" "}

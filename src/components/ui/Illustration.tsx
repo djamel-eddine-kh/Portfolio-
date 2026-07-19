@@ -126,7 +126,7 @@ export default function Illustration() {
         {/* <> icon */}
         <g className="code-icon">
           <text x="120" y="215" fontSize="34" fontWeight="700" fill="hsl(var(--primary))" fontFamily="var(--app-font-mono), monospace">
-            {"></"}
+            {"</>"}
           </text>
         </g>
 

@@ -38,6 +38,8 @@ export default function ExperienceCard({
 
             text-card-foreground
 
+        w-full
+
       transition-all
       duration-300
       "
@@ -81,11 +83,11 @@ export default function ExperienceCard({
       "
             />
 
-            <div className="relative px-7 py-6">
+            <div className="relative px-5 py-5 sm:px-7 sm:py-6">
 
                 {/* HEADER */}
 
-                <div className="flex flex-wrap items-start justify-between gap-5">
+                <div className="flex flex-wrap items-start justify-between gap-4 sm:gap-5">
 
                     <div className="flex gap-4">
 
@@ -93,8 +95,10 @@ export default function ExperienceCard({
                             whileHover={iconHover}
                             className="
               flex
-              h-14
-              w-14
+              h-12
+              w-12
+              sm:h-14
+              sm:w-14
               shrink-0
               items-center
               justify-center
@@ -114,11 +118,11 @@ export default function ExperienceCard({
 
                         <div>
 
-                            <h3 className="text-xl font-bold text-foreground">
+                            <h3 className="text-lg font-bold text-foreground sm:text-xl">
                                 {experience.company}
                             </h3>
 
-                            <p className="mt-1 text-primary">
+                            <p className="mt-1 text-sm text-primary sm:text-base">
                                 {experience.role}
                             </p>
 
@@ -162,7 +166,7 @@ export default function ExperienceCard({
                             </div>
                         )}
 
-                        <div className="mt-3 flex items-center justify-end gap-2 text-sm text-muted-foreground">
+                        <div className="mt-2 flex items-center justify-end gap-2 text-xs text-muted-foreground sm:mt-3 sm:text-sm">
 
                             <Calendar size={15} />
 
@@ -176,11 +180,11 @@ export default function ExperienceCard({
 
                 {/* Divider */}
 
-                <div className="my-5 h-px bg-white/10" />
+                <div className="my-4 h-px bg-border sm:my-5" />
 
                 {/* ACHIEVEMENTS */}
 
-                <div className="space-y-3">
+                <div className="space-y-2.5 sm:space-y-3">
 
                     {experience.points.map((point) => (
 
@@ -190,7 +194,7 @@ export default function ExperienceCard({
                         >
 
                             <CheckCircle2
-                                size={18}
+                                size={17}
                                 className="
                 mt-0.5
 
@@ -200,7 +204,7 @@ export default function ExperienceCard({
                 "
                             />
 
-                            <p className="leading-7 text-muted-foreground">
+                            <p className="leading-6 text-sm text-muted-foreground sm:text-base sm:leading-7">
 
                                 {point}
 
@@ -214,7 +218,7 @@ export default function ExperienceCard({
 
                 {/* Technologies */}
 
-                <div className="mt-8">
+                <div className="mt-6 sm:mt-8">
 
                     <div
                         className="
@@ -232,7 +236,7 @@ export default function ExperienceCard({
                         Technologies
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
 
                         {experience.skills.map((skill) => (
 
@@ -247,8 +251,11 @@ export default function ExperienceCard({
 
                 bg-primary/5
 
-                px-3
-                py-1.5
+                px-2.5
+                py-1
+
+                sm:px-3
+                sm:py-1.5
 
                 text-xs
                 font-medium

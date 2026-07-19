@@ -178,13 +178,13 @@ export default function TimelineItem({
 
             {/* MOBILE */}
 
-            <div className="lg:hidden pl-10 relative">
+                        <div className="lg:hidden relative pl-8 pr-1">
                 <div
                     className="
           absolute
 
-          left-0
-          top-8
+                    left-0
+                    top-7
 
           h-6
           w-6
