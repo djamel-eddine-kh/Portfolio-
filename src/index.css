@@ -187,7 +187,7 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    transition: background-color 0.35s ease, color 0.25s ease;
+    transition: background-color 0.35s ease;
   }
 }
 
@@ -200,17 +200,11 @@
 [class*="bg-accent"],
 [class*="bg-popover"],
 [class*="bg-sidebar"],
-[class*="text-foreground"],
-[class*="text-muted-foreground"],
-[class*="text-card-foreground"],
-[class*="text-primary"],
-[class*="text-accent"],
-[class*="text-secondary"],
 [class*="border-border"],
 [class*="border-card-border"],
 [class*="border-primary"],
 [class*="border-secondary"] {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Reduced motion support */
@@ -246,7 +240,7 @@
 [class*="bg-secondary"],
 [class*="bg-background"],
 [class*="bg-muted"] {
-  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.25s ease;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 .glow-card {
