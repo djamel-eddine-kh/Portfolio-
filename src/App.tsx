@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster.tsx';
 import { TooltipProvider } from '@/components/ui/tooltip.tsx';
 import { ThemeProvider } from './components/ThemeProvider.tsx';
 import { Fallback } from './components/Background/Fallback.tsx';
+import SEO from './components/SEO.tsx';
 
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/sections/Hero.tsx';
@@ -24,6 +25,7 @@ const queryClient = new QueryClient();
 function Portfolio() {
   return (
     <div className="min-h-screen w-full bg-background selection:bg-primary/30 selection:text-primary-foreground">
+      <SEO />
       <a href="#main" className="skip-link">
         Skip to main content
       </a>
