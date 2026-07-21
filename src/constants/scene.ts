@@ -61,7 +61,7 @@ export const TARGET_VALUES: Record<'dark' | 'light', ThemeSceneValues> = {
   light: createDefaultValues(false),
 };
 
-export const THEME_TRANSITION_MS = 700;
+export const THEME_TRANSITION_MS = 500;
 
 export const STAR_CONFIG = {
   count: 600,
