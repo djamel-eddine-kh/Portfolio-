@@ -10,8 +10,8 @@ const DEFAULTS = {
   description:
     'Portfolio of Djamel Eddine Khelifaoui — Software Engineer, AI Researcher, and PhD Candidate specializing in scalable backend systems, mobile applications, and machine learning for IoT security.',
   keywords:
-    'Djamel Eddine Khelifaoui, Software Engineer, AI Researcher, PhD Candidate, Java, Spring Boot, React, Angular, Machine Learning, Deep Learning, IoT, Network Security, Algeria',
-  ogImage: `${SITE_URL}/og-image.png`,
+    'Djamel Eddine Khelifaoui, Djamel Khelifaoui, جمال الدين خليفاوي, Software Engineer, AI Researcher, PhD Candidate, Java, Spring Boot, React, TypeScript, PostgreSQL, Docker, Redis, Hibernate, Machine Learning, Artificial Intelligence, IoT Security, Network Security',
+  ogImage: `${SITE_URL}/portfolio-og-image.png`,
 } as const;
 
 interface SEOProps {
@@ -64,21 +64,34 @@ export default function SEO({
         '@type': 'Person',
         '@id': `${SITE_URL}/#person`,
         name: SITE_NAME,
-        jobTitle: 'Software Engineer & AI Researcher',
+        alternateName: [
+          'Djamel Khelifaoui',
+          'جمال الدين خليفاوي',
+        ],
+        jobTitle: [
+          'Software Engineer',
+          'AI Researcher',
+          'PhD Candidate',
+        ],
         url: SITE_URL,
+        image: `${SITE_URL}/portfolio-og-image.png`,
         sameAs: [
           'https://www.linkedin.com/in/djamel-eddine-khelifaoui/',
           'https://github.com/djamel-eddine-kh',
         ],
         knowsAbout: [
-          'Software Engineering',
-          'Backend Architecture',
-          'Artificial Intelligence',
-          'Machine Learning',
-          'IoT Fingerprinting',
           'Java',
           'Spring Boot',
           'React',
+          'TypeScript',
+          'PostgreSQL',
+          'Docker',
+          'Redis',
+          'Hibernate',
+          'Machine Learning',
+          'Artificial Intelligence',
+          'IoT Security',
+          'Network Security',
         ],
       },
       {
@@ -86,9 +99,12 @@ export default function SEO({
         '@id': `${SITE_URL}/#website`,
         url: SITE_URL,
         name: `${SITE_NAME} — Official Portfolio`,
+        alternateName: 'Djamel Eddine Khelifaoui Portfolio',
+        description: DEFAULTS.description,
         publisher: {
           '@id': `${SITE_URL}/#person`,
         },
+        inLanguage: ['en', 'ar'],
       },
     ],
   };
@@ -109,6 +125,11 @@ export default function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:secure_url" content={ogImage} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_US" />
 
@@ -118,9 +139,19 @@ export default function SEO({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={fullTitle} />
+
+      {/* Favicon & Web Manifest */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/manifest.webmanifest" />
 
       {/* Additional SEO signals */}
       <meta name="theme-color" content="#0B1120" />
+      <meta name="msapplication-TileColor" content="#0B1120" />
       <meta name="color-scheme" content="dark light" />
 
       {/* JSON-LD Structured Data */}
