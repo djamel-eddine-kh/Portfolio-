@@ -35,7 +35,7 @@ export default function Education() {
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
             Education
           </h2>
-          <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+          <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
 
         <div className="space-y-8">
@@ -49,10 +49,10 @@ export default function Education() {
             >
               <div className="flex flex-col items-center">
                 <div className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-colors z-10">
-                  <GraduationCap className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <GraduationCap aria-hidden="true" className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
-                {i !== EDUCATION.length - 1 && (
-                  <div className="w-px h-full bg-border mt-2 group-hover:bg-primary/50 transition-colors" />
+                  {i !== EDUCATION.length - 1 && (
+                  <div aria-hidden="true" className="w-px h-full bg-border mt-2 group-hover:bg-primary/50 transition-colors" />
                 )}
               </div>
               <div className="pb-8 pt-1">

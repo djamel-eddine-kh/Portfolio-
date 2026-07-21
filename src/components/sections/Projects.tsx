@@ -148,7 +148,7 @@ export default function Projects() {
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
             Some Things I've Built
           </h2>
-          <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+          <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
 
         <motion.div 
@@ -162,7 +162,7 @@ export default function Projects() {
               <div className="bg-card border border-card-border p-6 rounded-xl flex flex-col h-full glow-card group transition-transform hover:-translate-y-2 duration-300 relative">
                 {/* Header with status badge and links */}
                 <div className="flex items-start justify-between gap-4 mb-6">
-                  <Folder className="w-10 h-10 text-primary stroke-1 flex-shrink-0" />
+                  <Folder aria-hidden="true" className="w-10 h-10 text-primary stroke-1 flex-shrink-0" />
                   <div className="flex items-center gap-3 flex-shrink-0">
                     {/* Status badge */}
                     <span className={`px-2 py-0.5 text-xs font-mono font-medium rounded-full border ${STATUS_BADGES[project.status].className}`}>
@@ -192,14 +192,10 @@ export default function Projects() {
                         </a>
                       )}
                       {!project.githubUrl && !project.liveUrl && (
-                        <>
-                          <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub repository (private)">
-                            <Github className="w-5 h-5" />
-                          </a>
-                          <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Live demo (not available)">
-                            <ExternalLink className="w-5 h-5" />
-                          </a>
-                        </>
+                        <span className="flex items-center gap-2 text-muted-foreground" aria-label="Private repository — no public links available">
+                          <Github aria-hidden="true" className="w-5 h-5" />
+                          <ExternalLink aria-hidden="true" className="w-5 h-5" />
+                        </span>
                       )}
                     </div>
                   </div>

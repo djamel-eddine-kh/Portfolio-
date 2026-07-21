@@ -44,6 +44,7 @@ export default function ExperienceCard({
             {/* Glow */}
 
             <div
+                aria-hidden="true"
                 className="
         absolute
         inset-0
@@ -65,6 +66,7 @@ export default function ExperienceCard({
             {/* Top Accent */}
 
             <div
+                aria-hidden="true"
                 className="
         absolute
         left-0
@@ -152,7 +154,7 @@ export default function ExperienceCard({
                 text-emerald-400
               "
                             >
-                <span className="relative flex h-2.5 w-2.5">
+                <span aria-hidden="true" className="relative flex h-2.5 w-2.5">
 
                   <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"/>
 
@@ -165,7 +167,7 @@ export default function ExperienceCard({
 
                         <div className="mt-1.5 flex items-center justify-end gap-2 text-[11px] text-muted-foreground sm:mt-2 sm:text-sm">
 
-                            <Calendar size={15} />
+                            <Calendar aria-hidden="true" size={15} />
 
                             {experience.period}
 
@@ -177,7 +179,7 @@ export default function ExperienceCard({
 
                 {/* Divider */}
 
-                <div className="my-3 h-px bg-border sm:my-4" />
+                <div aria-hidden="true" className="my-3 h-px bg-border sm:my-4" />
 
                 {/* ACHIEVEMENTS */}
 
@@ -191,6 +193,7 @@ export default function ExperienceCard({
                         >
 
                             <CheckCircle2
+                                aria-hidden="true"
                                 size={16}
                                 className="
                 mt-0.5

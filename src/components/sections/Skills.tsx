@@ -175,7 +175,7 @@ function SkillBadge({
             className="pointer-events-none absolute -inset-1 rounded-lg bg-primary/40 blur-md"
         />
         {Icon && (
-            <motion.span style={{ opacity: iconOpacity }} className="relative flex items-center">
+            <motion.span aria-hidden="true" style={{ opacity: iconOpacity }} className="relative flex items-center">
               <Icon className="w-4.5 h-4.5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
             </motion.span>
         )}
@@ -247,7 +247,7 @@ export default function Skills() {
             <h2 className="text-2xl md:text-3xl font-bold flex items-center">
               Technical Skills
             </h2>
-            <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+            <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">

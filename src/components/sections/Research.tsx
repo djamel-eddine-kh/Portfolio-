@@ -40,12 +40,12 @@ export default function Research() {
 
             Research
           </h2>
-          <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+          <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
 
         <div className="bg-card border border-card-border p-8 md:p-10 rounded-xl relative overflow-hidden group">
           {/* Decorative background glow */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div aria-hidden="true" className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
           <div className="relative z-10 space-y-6">
             <div>
@@ -63,7 +63,7 @@ export default function Research() {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-border">
+            <div aria-hidden="true" className="pt-6 border-t border-border">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Research Interests</h4>
               <motion.div 
                 className="flex flex-wrap gap-3"
@@ -79,7 +79,7 @@ export default function Research() {
                       variants={item}
                       className="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium border border-secondary-border hover:border-primary/50 transition-colors"
                     >
-                      <Icon className="w-4 h-4 text-accent" />
+                      <Icon aria-hidden="true" className="w-4 h-4 text-accent" />
                       {interest.name}
                     </motion.div>
                   )

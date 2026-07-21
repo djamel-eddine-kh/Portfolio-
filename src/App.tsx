@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { MotionConfig } from 'framer-motion';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster.tsx';
 import { TooltipProvider } from '@/components/ui/tooltip.tsx';
@@ -54,7 +55,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ThemeProvider>
-          <Portfolio />
+          <MotionConfig reducedMotion="user">
+            <Portfolio />
+          </MotionConfig>
           <Toaster />
         </ThemeProvider>
       </TooltipProvider>

@@ -37,22 +37,22 @@ export default function Achievements() {
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
             Achievements
           </h2>
-          <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+          <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
 
-        <motion.div 
-          className="grid sm:grid-cols-2 gap-4"
+        <motion.ul 
+          className="grid sm:grid-cols-2 gap-4 list-none"
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
           {ACHIEVEMENTS.map((achievement, i) => (
-            <motion.div
+            <motion.li
               key={i}
               variants={item}
               className="flex items-center gap-4 p-4 rounded-lg bg-card border border-card-border hover:border-accent/50 transition-colors group"
             >
-              <div className="text-accent group-hover:scale-110 transition-transform">
+              <div aria-hidden="true" className="text-accent group-hover:scale-110 transition-transform">
                 <Award className="w-6 h-6 stroke-1" />
               </div>
               {achievement.url ? (
@@ -67,9 +67,9 @@ export default function Achievements() {
               ) : (
                 <span className="font-medium text-foreground">{achievement.label}</span>
               )}
-            </motion.div>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
       </motion.div>
     </section>
   );

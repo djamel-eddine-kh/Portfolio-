@@ -61,15 +61,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scroll when mobile menu is open
+  // Prevent scroll when mobile menu is open; close on Escape
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', onKeyDown);
+    }
     return () => {
       document.body.style.overflow = 'unset';
+      document.removeEventListener('keydown', onKeyDown);
     };
   }, [isMobileMenuOpen]);
 
@@ -92,11 +100,12 @@ export default function Navbar() {
         {/* Brand/Logo */}
         <motion.a
           href="#hero"
+          aria-label="Go to top of page"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-lg md:text-xl font-bold font-mono text-primary group flex items-center gap-1 select-none"
         >
-          
+          DK
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -175,6 +184,7 @@ export default function Navbar() {
           <>
             {/* Backdrop */}
             <motion.div
+              aria-hidden="true"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -198,11 +208,11 @@ export default function Navbar() {
                     className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                     whileTap={{ scale: 0.9 }}
                   >
-                    <X size={16} />
+                    <X aria-hidden="true" size={16} />
                   </motion.button>
                 </div>
 
-                <nav className="flex flex-col gap-5">
+                <nav aria-label="Mobile navigation" className="flex flex-col gap-5">
                   {NAV_LINKS.map((link, i) => (
                     <motion.a
                       key={link.name}

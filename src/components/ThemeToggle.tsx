@@ -30,6 +30,7 @@ export default function ThemeToggle() {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        aria-hidden="true"
         className="absolute text-foreground"
         initial={false}
         animate={{
@@ -61,6 +62,7 @@ export default function ThemeToggle() {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        aria-hidden="true"
         className="absolute text-foreground"
         initial={false}
         animate={{

@@ -17,7 +17,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl font-bold flex items-center">
             About Me
           </h2>
-          <div className="h-px bg-muted flex-grow max-w-[300px]"></div>
+          <div aria-hidden="true" className="h-px bg-muted flex-grow max-w-[300px]"></div>
         </div>
 
         <div className="grid md:grid-cols-[1fr_1fr] gap-10 items-start">

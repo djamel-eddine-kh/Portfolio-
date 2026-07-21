@@ -26,7 +26,7 @@ export default function Contact() {
             href="mailto:djamelEddinekhelifaoui@gmail.com" 
             className="flex items-center gap-2 px-6 py-3 bg-card border border-card-border rounded-md hover:border-primary hover:text-primary transition-all duration-300"
           >
-            <Mail className="w-5 h-5" />
+            <Mail aria-hidden="true" className="w-5 h-5" />
             <span className="font-mono">Email</span>
           </a>
           
@@ -36,7 +36,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-card border border-card-border rounded-md hover:border-[#0A66C2] hover:text-[#0A66C2] transition-all duration-300"
           >
-            <Linkedin className="w-5 h-5" />
+            <Linkedin aria-hidden="true" className="w-5 h-5" />
             <span className="font-mono">LinkedIn</span>
           </a>
           
@@ -46,7 +46,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-card border border-card-border rounded-md hover:border-foreground hover:text-foreground transition-all duration-300"
           >
-            <Github className="w-5 h-5" />
+            <Github aria-hidden="true" className="w-5 h-5" />
             <span className="font-mono">GitHub</span>
           </a>
         </div>

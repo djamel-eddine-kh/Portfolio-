@@ -73,6 +73,7 @@ export default function TimelineItem({
                 {/* connector */}
 
                 <div
+                    aria-hidden="true"
                     className={`
             absolute
 
@@ -107,6 +108,7 @@ export default function TimelineItem({
                     {/* outer glow */}
 
                     <motion.div
+                        aria-hidden="true"
                         animate={{
                             opacity: active ? 1 : 0,
                             scale: active ? 1 : 0.8,
@@ -130,6 +132,7 @@ export default function TimelineItem({
                     {/* ring */}
 
                     <div
+                        aria-hidden="true"
                         className="
             relative
 
@@ -184,6 +187,7 @@ export default function TimelineItem({
 
                         <div className="lg:hidden relative pl-10 pr-0">
                 <div
+                    aria-hidden="true"
                     className="
           absolute
 

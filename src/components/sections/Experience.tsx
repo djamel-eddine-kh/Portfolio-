@@ -43,6 +43,7 @@ export default function Experience() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
           <div
+              aria-hidden="true"
               className="
           absolute
           left-1/2
@@ -78,7 +79,7 @@ export default function Experience() {
               </span>
               </h2>
 
-              <div className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+              <div aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
 
             </div>
 
