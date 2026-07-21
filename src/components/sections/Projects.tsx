@@ -10,7 +10,7 @@ interface Project {
   githubUrl?: string;
   liveUrl?: string;
   image?: string;
-  status: 'production' | 'internal' | 'opensource';
+  status: 'production' | 'internal' | 'opensource' | 'completed' ;
 }
 
 const TECH_CATEGORIES: Record<string, { bg: string; text: string; border: string }> = {
@@ -56,6 +56,10 @@ const TECH_CATEGORIES: Record<string, { bg: string; text: string; border: string
 const STATUS_BADGES: Record<Project['status'], { label: string; className: string }> = {
   production: { label: "Production", className: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800" },
   internal: { label: "Internal", className: "bg-slate-100 text-slate-700 dark:bg-slate-900/30 dark:text-slate-300 border-slate-200 dark:border-slate-800" },
+  completed: {
+    label: "Completed",
+    className: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-800",
+  },
   opensource: { label: "Open Source", className: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border-purple-200 dark:border-purple-800" },
 };
 
@@ -65,8 +69,6 @@ const PROJECTS: Project[] = [
     type: "Enterprise Application",
     description: "Telecom asset management platform for SIM cards, IP Phones, and Employee assignments.",
     tech: ["Spring Boot", "Angular", "PostgreSQL"],
-    githubUrl: "https://github.com/djamel-eddine-kh/trm-telecom",
-    liveUrl: "https://trm-telecom.example.com",
     status: "internal",
   },
   {
@@ -74,7 +76,6 @@ const PROJECTS: Project[] = [
     type: "Enterprise Mobile Platform",
     description: "Redesign of an enterprise mobile platform, improving performance, fixing bugs, and providing robust backend APIs.",
     tech: ["Spring Boot", "Kotlin"],
-    githubUrl: "https://github.com/djamel-eddine-kh/miyahi-mob",
     status: "production",
   },
   {
@@ -82,7 +83,6 @@ const PROJECTS: Project[] = [
     type: "REST API",
     description: "A highly scalable nationwide SMS broadcasting system built to handle high throughput and reliability.",
     tech: ["Spring Boot"],
-    githubUrl: "https://github.com/djamel-eddine-kh/national-sms-platform",
     status: "internal",
   },
   {
@@ -90,7 +90,6 @@ const PROJECTS: Project[] = [
     type: "Internal Portal",
     description: "Company intranet leveraging a microservices architecture for modularity and scalability.",
     tech: ["Spring Boot", "React", "Spring Cloud", "Spring Security", "PostgreSQL"],
-    githubUrl: "https://github.com/djamel-eddine-kh/microservices-intranet",
     status: "internal",
   },
   {
@@ -98,16 +97,13 @@ const PROJECTS: Project[] = [
     type: "Mobile App",
     description: "A complete delivery solution featuring real-time tracking, authentication, and database sync.",
     tech: ["Android", "Java", "Firebase", "Google Maps"],
-    githubUrl: "https://github.com/djamel-eddine-kh/delivery-android-app",
-    liveUrl: "https://play.google.com/store/apps/details?id=com.djamel.delivery",
-    status: "production",
+    status: "completed",
   },
   {
     title: "Flight School ERP",
     type: "Management System",
     description: "Enterprise resource planning system customized for flight school operations and scheduling.",
     tech: ["Python", "Django", "Bootstrap"],
-    githubUrl: "https://github.com/djamel-eddine-kh/flight-school-erp",
     status: "internal",
   }
 ];
@@ -168,36 +164,7 @@ export default function Projects() {
                     <span className={`px-2 py-0.5 text-xs font-mono font-medium rounded-full border ${STATUS_BADGES[project.status].className}`}>
                       {STATUS_BADGES[project.status].label}
                     </span>
-                    <div className="flex items-center gap-2">
-                      {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label={`View ${project.title} on GitHub`}
-                        >
-                          <Github className="w-5 h-5" />
-                        </a>
-                      )}
-                      {project.liveUrl && (
-                        <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-accent transition-colors"
-                          aria-label={`View ${project.title} live`}
-                        >
-                          <Globe className="w-5 h-5" />
-                        </a>
-                      )}
-                      {!project.githubUrl && !project.liveUrl && (
-                        <span className="flex items-center gap-2 text-muted-foreground" aria-label="Private repository — no public links available">
-                          <Github aria-hidden="true" className="w-5 h-5" />
-                          <ExternalLink aria-hidden="true" className="w-5 h-5" />
-                        </span>
-                      )}
-                    </div>
+
                   </div>
                 </div>
 
