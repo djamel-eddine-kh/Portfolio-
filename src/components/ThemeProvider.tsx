@@ -10,18 +10,15 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function getInitialTheme(): Theme {
-  // Check localStorage first
   if (typeof window !== 'undefined') {
     const stored = localStorage.getItem('theme');
     if (stored === 'light' || stored === 'dark') {
       return stored;
     }
-    // Fall back to OS preference
-    if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
   }
-  return 'light';
+
+  // First visit: default to dark
+  return 'dark';
 }
 
 function applyTheme(theme: Theme) {
