@@ -57,6 +57,42 @@ export default function SEO({
 
   const canonicalUrl = `${SITE_URL}${path === '/' ? '' : path}`;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': `${SITE_URL}/#person`,
+        name: SITE_NAME,
+        jobTitle: 'Software Engineer & AI Researcher',
+        url: SITE_URL,
+        sameAs: [
+          'https://www.linkedin.com/in/djamel-eddine-khelifaoui/',
+          'https://github.com/djamel-eddine-kh',
+        ],
+        knowsAbout: [
+          'Software Engineering',
+          'Backend Architecture',
+          'Artificial Intelligence',
+          'Machine Learning',
+          'IoT Fingerprinting',
+          'Java',
+          'Spring Boot',
+          'React',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: `${SITE_NAME} — Official Portfolio`,
+        publisher: {
+          '@id': `${SITE_URL}/#person`,
+        },
+      },
+    ],
+  };
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -86,6 +122,9 @@ export default function SEO({
       {/* Additional SEO signals */}
       <meta name="theme-color" content="#0B1120" />
       <meta name="color-scheme" content="dark light" />
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
   );
 }
